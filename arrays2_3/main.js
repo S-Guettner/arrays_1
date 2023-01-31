@@ -1,22 +1,39 @@
 const inputVorname = document.getElementById("inputVorname")
-const inputNachname = document.getElementById("inputNachname")
+/* const inputNachname = document.getElementById("inputNachname") */
 const listContainer = document.getElementById("listContainer")
-
+let li
 const vollerName = []
-
-const output = document.getElementById("output")
 const teilnehmerListe = []
 
 const list = (hinzufügen) => {
-    const vollerName = [inputVorname.value , inputNachname.value]/* .join(" ") */
-/*     hinzufügen ? (teilnehmerListe.push(vollerName),console.log(teilnehmerListe),listContainer.textContent = teilnehmerListe)
-    :
-    (teilnehmerListe.pop(),console.log(teilnehmerListe),console.log("test")) */
-    let newElement = document.createElement("li")
-    listContainer.appendChild(newElement)
-    
-    hinzufügen ? (teilnehmerListe.unshift(vollerName),newElement.textContent = vollerName.join(" "))
-    :
-    (teilnehmerListe.shift(),listContainer.removeChild(newElement),console.log("test"))
+    if(hinzufügen){
+        let name = inputVorname.value
+        teilnehmerListe.push(name)
+        console.log(teilnehmerListe)
 
+
+        li = document.createElement("li")
+
+        listContainer.append(li)
+        li.innerHTML =  teilnehmerListe[teilnehmerListe.length-1]
     }
+    else {
+        li.remove("li")
+        teilnehmerListe.pop()
+        console.log(teilnehmerListe)
+        /* console.log(listContainer) */
+    }
+    
+    }
+
+
+
+
+
+
+
+
+
+
+
+
