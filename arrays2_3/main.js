@@ -16,7 +16,7 @@ const list = (hinzufügen) => {
         lastChild.remove()
         teilnehmerListe.pop()
     }
-    }
+}
 
 
 
